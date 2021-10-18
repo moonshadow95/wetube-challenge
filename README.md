@@ -1,4 +1,4 @@
-# 🔥 The GOAL of this CHALLENGE - Make a Youtube Clone in a WEEK📅
+# 🔥 The GOAL of this CHALLENGE <br/> Make a Youtube Clone in a WEEK📅
 
 ## 🚀 Functions
 
@@ -11,7 +11,7 @@
 ## 📑 Plan
 
 - [ ] Project setup
-  - 21.10.18 - ing
+  - 21.10.18 - 21.10.18
 - [ ] Routers
 - [ ] Templates
 - [ ] MongoDB and Mongoose
