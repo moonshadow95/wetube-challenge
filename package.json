@@ -1,0 +1,28 @@
+{
+  "name": "wetube-challenge",
+  "version": "1.0.0",
+  "description": "Youtube Clone with nodeJS, Express, Mongo and ES6",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon  --exec babel-node src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moonshadow95/wetube-challenge.git"
+  },
+  "author": "ChulJong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/moonshadow95/wetube-challenge/issues"
+  },
+  "homepage": "https://github.com/moonshadow95/wetube-challenge#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.8",
+    "@babel/node": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "nodemon": "^2.0.13"
+  }
+}
