@@ -4,3 +4,7 @@ include mixins/video
 
 block content
     h1 HOME
+    each video in videos 
+        +video(video)
+    else
+        | No videos

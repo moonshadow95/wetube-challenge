@@ -1,5 +1,5 @@
 import './db';
-import './model/Video';
+import './models/Video';
 import app from './server';
 
 const PORT = process.env.PORT || 4000;
