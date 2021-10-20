@@ -17,14 +17,16 @@
   - /
     - Join, Login, Search
   - /users
-    - /users/edit
-    - /users/delete
+    - /users/:id -> See User
+    - /users/edit -> Edit User
+    - /users/delete -> Delete User
   - /videos
-    - /videos/watch
-    - /videos/edit
-    - /videos/delete
-    - /videos/comments
-    - /videos/comments/delete
+    - /videos/:id -> Watch Video
+    - /videos/upload -> Upload Video
+    - /videos/:id/edit -> Edit Video
+    - /videos/:id/delete -> Delete Video
+    - /videos/:id/comments -> Make Comment
+    - /videos/:id/comments/delete -> Delete Comment
 - [ ] Templates
 - [ ] MongoDB and Mongoose
 - [ ] User Authentication
