@@ -4,7 +4,7 @@
   "description": "Youtube Clone with nodeJS, Express, Mongo and ES6",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon  --exec babel-node src/server.js"
+    "dev": "nodemon  --exec babel-node src/init.js"
   },
   "repository": {
     "type": "git",
@@ -17,7 +17,8 @@
   },
   "homepage": "https://github.com/moonshadow95/wetube-challenge#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "pug": "^3.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.15.8",
