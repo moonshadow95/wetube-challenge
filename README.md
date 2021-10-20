@@ -28,7 +28,9 @@
     - /videos/:id/comments -> Make Comment
     - /videos/:id/comments/delete -> Delete Comment
 - [ ] Templates
+  - 21.10.20 -ing
 - [ ] MongoDB and Mongoose
+  - 21.10.20 -ing
 - [ ] User Authentication
 - [ ] User Profile
 - [ ] Views API
