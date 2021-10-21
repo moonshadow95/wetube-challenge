@@ -1,4 +1,16 @@
 extends base
 
 block content 
-  h1=video.title
+  div
+    div 
+      each hashtag in video.hashtags
+        // Click to search by hashtag
+        a(href="")=hashtag 
+      h1=video.title
+      div 
+        if video.meta.views<=1 
+          span #{video.meta.views} view
+        else
+          span #{video.meta.views} views
+        span  · 
+        small=video.createdAt.toISOString().substr(0,10)
