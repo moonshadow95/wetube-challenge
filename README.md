@@ -12,8 +12,8 @@
 
 - [x] Project setup
   - 21.10.18 - 21.10.18
-- [ ] Routers
-  - 21.10.18 - ing
+- [x] Routers
+  - 21.10.18 - 21.10.19
   - /
     - Join, Login, Search
   - /users
@@ -27,10 +27,15 @@
     - /videos/:id/delete -> Delete Video
     - /videos/:id/comments -> Make Comment
     - /videos/:id/comments/delete -> Delete Comment
-- [ ] Templates
+- [x] Templates
   - 21.10.20 -ing
+  - Home
+  - Upload
+  - Watch
+  - Edit
 - [ ] MongoDB and Mongoose
   - 21.10.20 -ing
+  - Video Model
 - [ ] User Authentication
 - [ ] User Profile
 - [ ] Views API
