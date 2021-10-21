@@ -5,11 +5,16 @@ import {
   getEditProfile,
   postEditProfile,
 } from '../controller/userController';
+import { protectorMiddleware } from '../middlewares';
 
 const userRouter = express.Router();
 
-userRouter.get('/logout', logout);
-userRouter.route('/edit').get(getEditProfile).post(postEditProfile);
+userRouter.get('/logout', protectorMiddleware, logout);
+userRouter
+  .route('/edit')
+  .all(protectorMiddleware)
+  .get(getEditProfile)
+  .post(postEditProfile);
 userRouter.get('/:id', userProfile);
 
 export default userRouter;
