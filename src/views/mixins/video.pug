@@ -1,2 +1,15 @@
 mixin video(video)
-  span=video.title
+  a(href=`/videos/${video.id}`)
+    div
+      img(src="" alt="")
+    div
+      div
+        i.fas.fa-user-circle 
+        span=video.title
+      div
+        span •
+        if video.meta.views <=1
+          span #{video.meta.views} view 
+        else 
+          span #{video.meta.views} views
+        small=video.createdAt
