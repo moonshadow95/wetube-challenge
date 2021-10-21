@@ -21,7 +21,7 @@ export const getUpload = (req, res, next) => {
 export const postUpload = async (req, res, next) => {
   const { title, description, hashtags } = req.body;
   try {
-    const newVideo = await Video.create({
+    await Video.create({
       title,
       description,
       hashtags: Video.formatHashtags(hashtags),
@@ -60,8 +60,10 @@ export const postEdit = async (req, res, next) => {
 };
 
 export const deleteVideo = async (req, res, next) => {
-  const { id } = req.body;
+  const { id } = req.params;
+  console.log(id);
   const video = await Video.findById(id);
+  console.log(video);
   if (!video) {
     return res.status(404).render('404', { pageTitle: 'Video not found.' });
   }
