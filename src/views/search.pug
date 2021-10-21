@@ -1,0 +1,13 @@
+extends base
+include mixins/video
+
+block content
+  form(method="GET")
+    input(name="keyword"  placeholder="Search by keyword" type="text")
+    button
+      i.fas.fa-search
+  div
+    each video in videos 
+        +video(video)
+    else
+        | No videos

@@ -61,9 +61,7 @@ export const postEdit = async (req, res, next) => {
 
 export const deleteVideo = async (req, res, next) => {
   const { id } = req.params;
-  console.log(id);
   const video = await Video.findById(id);
-  console.log(video);
   if (!video) {
     return res.status(404).render('404', { pageTitle: 'Video not found.' });
   }
@@ -71,4 +69,15 @@ export const deleteVideo = async (req, res, next) => {
   return res.redirect('/');
 };
 
-export const search = (req, res, next) => {};
+export const search = async (req, res, next) => {
+  const { keyword } = req.query;
+  let videos = [];
+  if (keyword) {
+    videos = await Video.find({
+      title: {
+        $regex: new RegExp(keyword, 'i'),
+      },
+    });
+  }
+  return res.render('search', { pageTitle: `Searched by ${keyword}`, videos });
+};
