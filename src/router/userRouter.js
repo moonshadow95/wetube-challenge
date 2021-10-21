@@ -4,8 +4,10 @@ import {
   userProfile,
   getEditProfile,
   postEditProfile,
+  startGithubLogin,
+  finishGithubLogin,
 } from '../controller/userController';
-import { protectorMiddleware } from '../middlewares';
+import { protectorMiddleware, publicOnlyMiddleware } from '../middlewares';
 
 const userRouter = express.Router();
 
@@ -15,6 +17,8 @@ userRouter
   .all(protectorMiddleware)
   .get(getEditProfile)
   .post(postEditProfile);
+userRouter.get('/github/start', publicOnlyMiddleware, startGithubLogin);
+userRouter.get('/github/finish', publicOnlyMiddleware, finishGithubLogin);
 userRouter.get('/:id', userProfile);
 
 export default userRouter;

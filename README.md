@@ -34,11 +34,15 @@
   - Watch
   - Edit
   - Search
-- [ ] MongoDB and Mongoose
-  - 21.10.20 -ing
+  - 404
+  - Join
+  - Login
+- [x] MongoDB and Mongoose
+  - 21.10.20 - 21.10.21
   - Video Model
   - User Model
-- [ ] User Authentication
+- [x] User Authentication
+  - 21.10.21 - 21.10.22
 - [ ] User Profile
 - [ ] Views API
 - [ ] Frontend Styling
