@@ -33,9 +33,11 @@
   - Upload
   - Watch
   - Edit
+  - Search
 - [ ] MongoDB and Mongoose
   - 21.10.20 -ing
   - Video Model
+  - User Model
 - [ ] User Authentication
 - [ ] User Profile
 - [ ] Views API
