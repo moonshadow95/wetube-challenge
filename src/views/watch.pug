@@ -14,3 +14,8 @@ block content
           span #{video.meta.views} views
         span  · 
         small=video.createdAt.toISOString().substr(0,10)
+      div
+        p=video.description
+      div.video__edit
+          a(href=`${video.id}/edit`) Edit Video &rarr;
+          a(href=`${video.id}/delete`) Delete Video &rarr;
