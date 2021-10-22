@@ -43,7 +43,9 @@
   - User Model
 - [x] User Authentication
   - 21.10.21 - 21.10.22
-- [ ] User Profile
+- [x] User Profile
+  - 21.10.22 - 21.10.22
+    - Editing
 - [ ] Views API
 - [ ] Frontend Styling
 - [ ] Video Recorder
