@@ -1,0 +1,18 @@
+extends base
+
+block content 
+  if errorMessage
+    span=errorMessage
+  form(method="POST")
+    if !loggedInUser.avatarUrl
+      i.fas.fa-user-circle.fa-8x
+    else
+      img(src=loggedInUser.avatarUrl alt="Avatar image" crossorigin)
+    input(name="email" type="email" placeholder="E-mail" value=loggedInUser.email)
+    input(name="username" type="text" placeholder="User Name" value=loggedInUser.username)
+    input(name="name" type="text" placeholder="Name" value=loggedInUser.name)
+    input(name="location" type="text" placeholder="Location" value=loggedInUser.location)
+    input(type="submit" value="Update Profile")
+    if !loggedInUser.socialOnly
+      div
+      a(href="change-password") Change Password &rarr; 

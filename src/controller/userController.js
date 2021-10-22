@@ -135,13 +135,69 @@ export const finishGithubLogin = async (req, res, next) => {
   }
 };
 
-export const getEditProfile = (req, res, next) => {};
+export const userProfile = async (req, res, next) => {
+  const { id } = req.params;
+  const user = await User.findById(id);
+  if (!user) {
+    return res.status(404).render('404', { pageTitle: 'User not found' });
+  }
+  return res.render('users/profile', {
+    pageTitle: user.username,
+    user,
+  });
+};
 
-export const postEditProfile = (req, res, next) => {};
+export const getEditProfile = (req, res, next) => {
+  return res.render('edit-profile', { pageTitle: 'Edit Profile' });
+};
+
+export const postEditProfile = async (req, res) => {
+  const {
+    file,
+    body: { name, email: newEmail, username: newUsername, location },
+    session: {
+      user: { _id, email, username, avatarUrl },
+    },
+  } = req;
+  let comparison = [];
+
+  if (newEmail !== email) {
+    comparison.push({ email: newEmail });
+  }
+  if (newUsername !== username) {
+    comparison.push({ username: newUsername });
+  }
+  console.log(comparison);
+  if (comparison.length > 0) {
+    const existingUser = await User.findOne({ $or: comparison });
+    if (existingUser && existingUser._id.toString() !== _id) {
+      return res.status(400).render('edit-profile', {
+        pageTitle: 'Edit Profile',
+        errorMessage: 'Username/Email already in use.',
+      });
+    }
+  }
+
+  const updatedUser = await User.findByIdAndUpdate(
+    _id,
+    {
+      avatarUrl: file
+        ? res.locals.isHeroku
+          ? file.location
+          : file.path
+        : avatarUrl,
+      name,
+      email: newEmail,
+      username: newUsername,
+      location,
+    },
+    { new: true }
+  );
+  req.session.user = updatedUser;
+  return res.redirect('/users/edit');
+};
 
 export const logout = (req, res) => {
   req.session.destroy();
   return res.redirect('/');
 };
-
-export const userProfile = (req, res, next) => {};
