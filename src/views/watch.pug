@@ -8,16 +8,24 @@ block content
       each hashtag in video.hashtags
         // Click to search by hashtag
         a(href="")=hashtag 
-      h1=video.title
-      div 
-        if video.meta.views<=1 
-          span #{video.meta.views} view
+    h1=video.title
+    div.video__view-createdAt
+      if video.meta.views<=1 
+        span #{video.meta.views} view
+      else
+        span #{video.meta.views} views
+      span  · 
+      small=video.createdAt.toISOString().substr(0,10)
+    div.video__owner-description
+      div.video__owner
+        if !video.owner.avatarUrl
+          i.fas.fa-user-circle.video__default-avatar.fa-3x
         else
-          span #{video.meta.views} views
-        span  · 
-        small=video.createdAt.toISOString().substr(0,10)
-      div
-        p=video.description
-      div.video__edit
+          img.video__avatar(src="/" + video.owner.avatarUrl alt="Avatar image" crossorigin) 
+        a(href=`/users/${video.owner._id}`)=video.owner.username
+      p.video__description=video.description
+      if String(video.owner._id) === String(loggedInUser._id)
+        div.video__edit
           a(href=`${video.id}/edit`) Edit Video &rarr;
           a(href=`${video.id}/delete`) Delete Video &rarr;
+  
