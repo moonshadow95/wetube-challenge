@@ -6,7 +6,7 @@ block content
         if !loggedInUser.avatarUrl
             i.fas.fa-user-circle.fa-8x
         else 
-            img(src=loggedInUser.avatarUrl alt="Avatar image" crossorigin)
+            img(src=`/${loggedInUser.avatarUrl}` alt="Avatar image" crossorigin)
         h3=user.username
     div
         if user.videos

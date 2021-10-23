@@ -21,7 +21,7 @@ header
             if !loggedInUser.avatarUrl
               i.fas.fa-user-circle.fa-2x
             else
-              img(src=loggedInUser.avatarUrl alt="Avatar image" crossorigin )
+              img(src=`/${loggedInUser.avatarUrl}` alt="Avatar image" crossorigin )
       else
         li 
           a(href="/join") Join
