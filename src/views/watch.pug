@@ -2,7 +2,9 @@ extends base
 
 block content 
   div
-    div 
+    video(src="/" + video.fileUrl crossorigin)
+  div.video__data
+    div.video__hashtags
       each hashtag in video.hashtags
         // Click to search by hashtag
         a(href="")=hashtag 
