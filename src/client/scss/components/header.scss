@@ -1,0 +1,59 @@
+@import "../config/variables";
+
+header {
+  padding: 1em 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .header__logo {
+    position: relative;
+    color: $red;
+    font-size: 1.6rem;
+  }
+  .logo__bg {
+    position: absolute;
+    left: 0.15em;
+    top: 0.3em;
+    background-color: $white;
+    width: 0.8em;
+    height: 0.5em;
+    border-radius: 1em;
+    z-index: -1;
+  }
+  ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    li {
+      margin-left: 1.5em;
+      font-size: 1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    i {
+      font-size: 0.8rem;
+    }
+    .header__btn {
+      background-color: $white;
+      color: $bg;
+      padding: 0.4em 0.8em;
+      border-radius: 0.3em;
+    }
+    .header__avatar {
+      margin-top: 0.1em;
+      width: 2em;
+      height: 2em;
+      border-radius: 50%;
+    }
+  }
+}
+
+@media screen and (max-width: 54em) {
+  header {
+    ul {
+      li {
+        font-size: 0.8rem;
+      }
+    }
+  }
+}

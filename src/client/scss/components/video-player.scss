@@ -1,0 +1,71 @@
+#videoContainer {
+  width: 100%;
+  margin: auto;
+  max-width: 70%;
+  position: relative;
+  video {
+    width: 100%;
+  }
+  .videoControls {
+    display: grid;
+    grid-template-columns: auto 4fr auto auto;
+    position: absolute;
+    margin: 0 auto;
+    bottom: 1em;
+    left: 0;
+    right: 0;
+    width: 95%;
+    padding: 0.5em;
+    box-sizing: border-box;
+    background-color: $black;
+    border-radius: 0.4em;
+    opacity: 0;
+    transition: opacity 300ms ease-in-out;
+    justify-content: space-between;
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 0.5em;
+    }
+    &.showing {
+      opacity: 0.8;
+    }
+    .videoControls__play {
+      .videoControls__playBtn {
+        padding: 0.2em;
+      }
+      .videoControls__time {
+        font-size: 1rem;
+      }
+    }
+    .videoControls__volume {
+      input {
+        opacity: 0;
+        position: absolute;
+        z-index: -1;
+        top: -2em;
+        transform: rotate(-90deg);
+        transform-origin: 10%;
+        transition: opacity 250ms;
+      }
+      &:hover {
+        input {
+          opacity: 1;
+        }
+      }
+      span {
+        margin-left: 0.5em;
+        i {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 70em) {
+  #videoContainer {
+    max-width: 100% !important;
+  }
+}

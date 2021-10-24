@@ -1,0 +1,7 @@
+mixin message(type, text)
+  div.message(class=type)
+    if type === 'error'
+      i.icon.fas.fa-times-circle
+    else
+      i.icon.fas.fa-check-circle
+    span=text

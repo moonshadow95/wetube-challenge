@@ -1,27 +1,45 @@
 extends base
 
-block content 
-  div
-    video(src="/" + video.fileUrl crossorigin)
+block content
+  div#videoContainer(data-id=video._id)
+    if locals.isHeroku 
+      video(src=video.fileUrl crossorigin)
+    else
+      video(src="/" + video.fileUrl crossorigin)
+    div#videoControls.videoControls
+      div.videoControls__play
+        span#play.videoControls__playBtn
+            i.fas.fa-play
+        div.videoControls__time
+          span#currentTime 00:00
+          span  / 
+          span#totalTime 00:00
+      input(type="range",step="1", value="0", min="0")#timeline.videoControls__timeline
+      div.videoControls__volume
+        input(type="range",step="0.1", value=0.5, min="0", max="1")#volume
+        span#mute
+          i.fas.fa-volume-up
+      div
+        span#fullScreen
+          i.fas.fa-expand
   div.video__data
     div.video__hashtags
       each hashtag in video.hashtags
-        // Click to search by hashtag
-        a(href="")=hashtag 
-    h1=video.title
+        a(href="")=hashtag
+    h1.video__title=video.title
     div.video__view-createdAt
       if video.meta.views<=1 
         span #{video.meta.views} view
       else
         span #{video.meta.views} views
       span  · 
-      small=video.createdAt.toISOString().substr(0,10)
+      small.video__createdAt=video.createdAt.toISOString().substr(0,10)
     div.video__owner-description
       div.video__owner
         if !video.owner.avatarUrl
           i.fas.fa-user-circle.video__default-avatar.fa-3x
         else
-          img.video__avatar(src="/" + video.owner.avatarUrl alt="Avatar image" crossorigin) 
+          img.video__avatar(src=video.owner.avatarUrl alt="Avatar image" crossorigin) 
         a(href=`/users/${video.owner._id}`)=video.owner.username
       p.video__description=video.description
       if String(video.owner._id) === String(loggedInUser._id)
@@ -29,3 +47,29 @@ block content
           a(href=`${video.id}/edit`) Edit Video &rarr;
           a(href=`${video.id}/delete`) Delete Video &rarr;
   
+  if loggedIn
+    div.video__add-comments
+      form.video__comment-form#commentForm
+        textarea(cols="30" rows="10" placeholder="Write a comment..." value="hi")
+        button Add comment
+
+  div.video__comments
+    ul
+      each comment in video.comments.reverse()
+        li.video__comment(data-id=comment._id)
+          if !comment.avatar
+            i.fas.fa-user-circle.comment__default-avatar
+          else
+            img.comment__avatar(src=comment.avatar alt="Avatar image" crossorigin)
+          div.comment__metadata
+            div
+              span.comment__owner=comment.username
+              span.createdAt=Number(comment.createdAt)
+            div.comment__text
+              span=comment.text
+              if String(comment.owner._id) === String(loggedInUser._id)
+                button.comment__delete#deleteBtn 
+                  i.far.fa-trash-alt
+block scripts
+  script(src="/static/js/videoPlayer.js") 
+  script(src="/static/js/commentSection.js") 

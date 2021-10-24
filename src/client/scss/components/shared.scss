@@ -1,0 +1,38 @@
+.empty__message {
+  margin-left: 4em;
+  margin-bottom: 4em;
+  font-size: 1rem;
+}
+.video-grid {
+  display: grid;
+  gap: 2%;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.auth-switch {
+  text-align: center;
+  margin-top: 4em;
+  a {
+    text-decoration: underline;
+  }
+}
+.avatar {
+  width: 10em;
+  height: 10em;
+  border-radius: 50%;
+}
+@media screen and (max-width: 74em) {
+  .video-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1em;
+  }
+}
+@media screen and (max-width: 52em) {
+  .video-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media screen and (max-width: 36em) {
+  .video-grid {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}

@@ -1,0 +1,118 @@
+.video__data {
+  display: flex;
+  flex-direction: column;
+  max-width: 70%;
+  margin: auto;
+  margin-top: 20px;
+  .video__hashtags {
+    display: flex;
+    a {
+      margin-right: 0.4em;
+      margin-bottom: 0.2em;
+      font-size: 0.9rem;
+      color: cornflowerblue;
+    }
+  }
+  .video__title {
+    font-size: 1.6rem;
+    margin-bottom: 0.4em;
+  }
+  .video__view-createdAt {
+    opacity: 0.7;
+    border-bottom: 1px solid rgba($color: $white, $alpha: 0.1);
+    padding-bottom: 1em;
+    margin-bottom: 2em;
+    width: 100%;
+    .video__createdAt {
+      font-size: 0.8rem;
+    }
+  }
+  .video__owner-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.2em;
+  }
+  .video__owner {
+    display: flex;
+    margin-bottom: 0.5em;
+    align-items: center;
+    font-size: 1rem;
+    .video__default-avatar {
+      margin-right: 16px;
+    }
+    .video__avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin-right: 16px;
+    }
+  }
+  .video__description {
+    margin-left: 66px;
+  }
+  .video__edit {
+    margin-top: 0.5em;
+    margin-left: 66px;
+    a {
+      display: flex;
+      flex-direction: column;
+      color: cornflowerblue;
+      margin-bottom: 0.2em;
+      width: fit-content;
+    }
+  }
+}
+.video__comments {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 70%;
+  margin: 0 auto;
+  margin-top: 20px;
+  .video__comment {
+    display: flex;
+    align-items: center;
+    padding: 0.8em 0;
+    color: $white;
+    margin-bottom: 0.8em;
+    .comment__avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin-right: 16px;
+    }
+    .comment__default-avatar {
+      width: 50px;
+      height: 50px;
+      font-size: 50px;
+      margin-right: 16px;
+    }
+    .comment__metadata {
+      width: 100%;
+      .comment__owner {
+        margin-right: 0.6em;
+      }
+      .createdAt {
+        font-size: 0.8rem;
+        opacity: 0.7;
+      }
+      .comment__text {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 0.6em;
+      }
+      .comment__delete {
+        all: unset;
+        border-radius: 0.2em;
+        background: $white;
+        cursor: pointer;
+        color: $black;
+        i {
+          padding: 0.3em;
+        }
+      }
+    }
+  }
+}

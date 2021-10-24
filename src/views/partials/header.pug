@@ -1,7 +1,7 @@
 header
   a(href="/").header__logo
     i.fab.fa-youtube
-    span
+    span.logo__bg
   nav
     ul
       li 
@@ -21,7 +21,7 @@ header
             if !loggedInUser.avatarUrl
               i.fas.fa-user-circle.fa-2x
             else
-              img(src=`/${loggedInUser.avatarUrl}` alt="Avatar image" crossorigin )
+              img.header__avatar(src=loggedInUser.avatarUrl alt="Avatar image" crossorigin )
       else
         li 
-          a(href="/join") Join
+          a(href="/join").header__btn Join
