@@ -28,7 +28,7 @@
     - /videos/:id/comments -> Make Comment
     - /videos/:id/comments/delete -> Delete Comment
 - [x] Templates
-  - 21.10.20 -ing
+  - 21.10.20 -21.10.22
   - Home
   - Upload
   - Watch
@@ -46,6 +46,9 @@
 - [x] User Profile
   - 21.10.22 - 21.10.22
     - Editing
-- [ ] Views API
-- [ ] Frontend Styling
-- [ ] Video Recorder
+- [x] Views API
+  - 21.10.24
+- [x] Frontend Styling
+  - 21.10.24
+- [x] Video Recorder
+  - 21.10.24
