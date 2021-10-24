@@ -13,13 +13,13 @@ const isHeroku = process.env.NODE_ENV === "production";
 
 const s3ImageUploader = multerS3({
   s3: s3,
-  bucket: "wetube-moonshadow/images",
+  bucket: "wetube-moonshadow-challenge/images",
   acl: "public-read",
 });
 
 const s3VideoUploader = multerS3({
   s3: s3,
-  bucket: "wetube-moonshadow/videos",
+  bucket: "wetube-moonshadow-challenge/videos",
   acl: "public-read",
 });
 
